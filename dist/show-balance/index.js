@@ -11,7 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getBalance = void 0;
 const web3_js_1 = require("@solana/web3.js");
-const airdrop_1 = require("../airdrop");
 const getBalance = (publicKey) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const connection = new web3_js_1.Connection("http://localhost:8899", "confirmed");
@@ -25,18 +24,20 @@ const getBalance = (publicKey) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.getBalance = getBalance;
-(() => __awaiter(void 0, void 0, void 0, function* () {
+/*
+(async () => {
     try {
         const walletKey = "6yfeqRBjG5yQDuPXTDYqGajUpVHvmwtNrZEecu5g8PKL";
-        const publicKey = new web3_js_1.PublicKey(walletKey);
-        let balance = yield (0, exports.getBalance)(publicKey);
+        const publicKey = new PublicKey(walletKey);
+        let balance = await getBalance(publicKey);
         console.log(`balance`, balance);
-        yield (0, airdrop_1.airdrop)(walletKey, 10);
-        balance = yield (0, exports.getBalance)(publicKey);
+        await airdrop(publicKey, 10);
+        balance = await getBalance(publicKey);
         console.log(`balance`, balance);
-    }
-    catch (error) {
+    } catch (error) {
         console.error(error);
     }
-}))();
+})();
+ */
+//GN96ad82Stft3iw9aiJaCXWfeM6bRF2NvM54V1ummmw
 //# sourceMappingURL=index.js.map
